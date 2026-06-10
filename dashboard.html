@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🚍 Dashboard</h2>
+
+<div>
+<a href="/predict">Prediction</a>
+<a href="/logout">Logout</a>
+</div>
+
+</nav>
+
+<div class="dashboard">
+
+<h1>
+Welcome, {{ username }}
+</h1>
+
+<div class="card">
+
+<h2>AI Crowd Prediction</h2>
+
+<p>
+Predict crowd levels using machine learning.
+</p>
+
+<a href="/predict" class="btn">
+Go To Prediction
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

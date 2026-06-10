@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Prediction</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h2>Predict Crowd Level</h2>
+
+<form method="POST">
+
+<label>Vehicle Type</label>
+
+<select name="vehicle">
+
+<option value="0">Bus</option>
+<option value="1">Metro</option>
+<option value="2">Train</option>
+
+</select>
+
+<label>Weather</label>
+
+<select name="weather">
+
+<option value="0">Cloudy</option>
+<option value="1">Rainy</option>
+<option value="2">Sunny</option>
+
+</select>
+
+<label>Holiday</label>
+
+<select name="holiday">
+
+<option value="0">No</option>
+<option value="1">Yes</option>
+
+</select>
+
+<input
+type="number"
+name="passenger_count"
+placeholder="Passenger Count"
+required>
+
+<input
+type="number"
+name="occupancy"
+placeholder="Occupancy %"
+required>
+
+<button type="submit">
+Predict
+</button>
+
+</form>
+
+{% if prediction %}
+
+<div class="result">
+
+<h3>
+Prediction Result:
+{{ prediction }}
+</h3>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
